@@ -37,7 +37,7 @@
         var totalRepos = parseInt(perfil.public_repos);
         var totalFollowers = parseInt(perfil.followers);
         var totalFollowing = parseInt(perfil.following);
-        var totalStars = getTotalStars(perfil.repos_url);
+        var totalStars = (perfil.repos_url.length) ? getTotalStars(perfil.repos_url) : 0;
         var totalGists = parseInt(perfil.public_gists);
         
         var resultado = [
