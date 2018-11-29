@@ -1,0 +1,101 @@
+body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Bangers', cursive;
+    color: #101015;
+  }
+  .header {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 120px;
+      margin: 0 0 10px 0;
+      border-bottom: 10px solid #101015;
+  }
+  .title {
+    font-size: 70px;
+    color: #101015;
+    margin-bottom: 0;
+  }
+  .subtitle {
+    margin: 20px 0 20px 0;
+    line-height: 50px;
+      border-bottom: 2px solid #101015;
+  }
+  .label {
+      font-family: 'Oswald', sans-serif;
+      font-weight: bold;
+      font-size: 14px;
+      color: #0c7cec;
+  }
+  .canvas {
+      border-top: 2px solid #101015;
+      padding: 10px;
+      margin: 0 0 30px 0;
+      width: 50%;
+      background-color: #d3d3d3;
+  }
+  .images-container {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      flex-wrap: wrap;
+  }
+  .cards {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+  }
+  .battleCard {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      align-content: center;
+      flex-direction: column;
+      height: auto;
+      color: #fff;
+      font-family: 'Oswald', sans-serif;
+      padding: 20px;
+  }
+  .battleCard:first-child {
+      background-color: #ec1d24;
+  }
+  .battleCard:last-child {
+      background-color: #0c7cec;
+  }
+  .battleCard h1 {
+      font-size: 100px;
+      font-family: 'Bangers', cursive;
+  }
+  .battleCard button {
+      padding: 10px 15px 10px 15px;
+      text-decoration: none;
+      border: none;
+      border-radius: 5px;
+  }
+  .vs {
+      background-color: #fff;
+      width: 100px;
+      height: 100px;
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+  }
+  .vs h1 {
+      font-size: 70px;
+  }
+  .frame {
+      width: 10%;
+      height: 130px;
+      border: 5px solid #fff;
+      background-color: #101015;
+      overflow: hidden;
+      float: left;
+  }
+  .image1, .image2 {
+      width: auto;
+      height: 100%;
+  }
+  
