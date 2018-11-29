@@ -34,13 +34,41 @@
     <script>
 
     function calcPontos(perfil) {
-        var totalRepos = parseInt(perfil.public_repos) * 20;
-        var totalFollowers = parseInt(perfil.followers) * 10;
-        var totalFollowing = parseInt(perfil.following) * 5;
-        var totalStars = getTotalStars(perfil.repos_url) * 10;
-        var totalGists = parseInt(perfil.public_gists) * 5;
+        var totalRepos = parseInt(perfil.public_repos);
+        var totalFollowers = parseInt(perfil.followers);
+        var totalFollowing = parseInt(perfil.following);
+        var totalStars = getTotalStars(perfil.repos_url);
+        var totalGists = parseInt(perfil.public_gists);
         
-        return totalRepos + totalFollowers + totalFollowing + totalStars + totalGists;
+        var resultado = [
+            {
+                criterio: "Repositório publico",
+                qtd: totalRepos,
+                total: totalRepos * 20
+            },
+            {
+                criterio: "Followers",
+                qtd: totalFollowers,
+                total: totalFollowers * 10
+            },
+            {
+                criterio: "Following",
+                qtd: totalFollowing,
+                total: totalFollowing * 5
+            },
+            {
+                criterio: "Estrela em repositórios",
+                qtd: totalStars,
+                total: totalStars * 10
+            },
+            {
+                criterio: "Gists",
+                qtd: totalGists,
+                totalGists: totalGists * 5
+            }
+        ];
+
+        return resultado;
     }
     function getTotalStars(repos_url) {
         const xhttp = new XMLHttpRequest();         
