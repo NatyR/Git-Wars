@@ -6,6 +6,7 @@
     url("http://db.onlinewebfonts.com/t/3b443b9d9335adaf9fea83fbf8d5d791.ttf") format("truetype"), /* chrome firefox opera Safari, Android, iOS 4.2+*/
     url("http://db.onlinewebfonts.com/t/3b443b9d9335adaf9fea83fbf8d5d791.svg#Hitman") format("svg"); /* iOS 4.1- */
 }
+
 body {
     margin: 0;
     padding: 0;
@@ -13,6 +14,7 @@ body {
     font-family: 'Bangers', cursive;
     color: #101015;
   }
+
   .header {
       display: flex;
       flex-direction: column;
@@ -23,10 +25,9 @@ body {
       border-bottom: 10px solid #101015;
   }
 
-
   .title {
     font-family:'Hitman';
-    font-size: 90px;
+    font-size: 75px;
     color: #000000;
     margin-bottom: 0;
   }
@@ -38,36 +39,19 @@ body {
     margin-bottom: 0;
     margin-top: -70px;
   }
+
   .subtitle {
     margin: 20px 0 20px 0;
     line-height: 50px;
       border-bottom: 2px solid #101015;
   }
-  .label {
-      font-family: 'Oswald', sans-serif;
-      font-weight: bold;
-      font-size: 14px;
-      color: #0c7cec;
-  }
-  .canvas {
-      border-top: 2px solid #101015;
-      padding: 10px;
-      margin: 0 0 30px 0;
-      width: 50%;
-      background-color: #d3d3d3;
-  }
-  .images-container {
-      display: flex;
-      flex-direction: row;
-      align-items: center;
-      flex-wrap: wrap;
-  }
+
   .cards {
       display: flex;
       justify-content: center;
       align-items: center;
-      
   }
+
   .battleCard {
       display: flex;
       justify-content: center;
@@ -79,28 +63,26 @@ body {
       font-family: 'Oswald', sans-serif;
       padding: 20px;
   }
+
   .battleCard:first-child {
       background-color: #e60a12;
       box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23); 
       transition: all 0.3s; 
       border-radius: 10px;      
   }
+
   .battleCard:last-child {
       background-color: #1b2fe6;
       box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23); 
       transition: all 0.3s; 
       border-radius: 10px;
   }
+
   .battleCard h1 {
       font-size: 100px;
       font-family: 'Bangers', cursive;
   }
-  .battleCard button {
-      padding: 10px 15px 10px 15px;
-      text-decoration: none;
-      border: none;
-      border-radius: 5px;
-  }
+
   .vs {
       background-color: #fff;
       width: 100px;
@@ -109,17 +91,19 @@ body {
       flex-direction: row;
       justify-content: center;
   }
+
   .vs h1 {
       font-size: 70px;
   }
+
   .frame {
       width: 10%;
       height: 130px;
       border: 5px solid #fff;
       background-color: #101015;
       overflow: hidden;
-      
   }
+
   .image1, .image2 {
       width: auto;
       height: 100%;
@@ -130,7 +114,7 @@ body {
       height: 100px;
       margin-left: 490px;
       margin-top: -100px;
-      opacity: 0.65;	
+      opacity: 0.65;
   }
 
   .interrogacao{
