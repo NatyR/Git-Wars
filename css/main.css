@@ -140,3 +140,9 @@ body {
     display: flex; 
 }
 
+div#quadritos {	
+    width: 200px;	
+    height: 250px;
+    display: inline;	
+   /* background-color: #ffc; /* Amarelo */	
+    border-bottom: 1px solid #f00;}
