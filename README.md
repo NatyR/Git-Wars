@@ -19,7 +19,7 @@ Renata Felix da Silva	 |   Gabriela Vieira   |   Eduardo Vinicius   |   Eldrin C
 - Eldrin Cordova - HTML / CSS
 - Eduardo Vinicius - JS/ Requisição
 - Gabriela Vieira - JS/ Requisição
-- Renata Felix da Silva - HTML / CSS Gerenciamento d
+- Renata Felix da Silva - HTML / CSS | Gerenciamento 
 - Suelen Marques - HTML / CSS
 
 ## Tecnologias Utilizadas
