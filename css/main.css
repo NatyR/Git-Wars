@@ -122,7 +122,13 @@ body {
   }
 
   #btnFight{
-     margin-left: 500px;
+     margin-left: 580px;
+  }
+
+  .form-control-sm{
+    size:19;
+    opacity: 0.85;  
+    box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);  
   }
 
 #tab-jogador-1, #tab-jogador-2, th, td{
@@ -132,4 +138,4 @@ body {
 
 .resultado{
     display: flex; 
-    }
+}
