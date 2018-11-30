@@ -27,3 +27,5 @@ Front (Bootstrap v4.1.3 ) |  Back (Javascript)
 
 ## Instruções de Configuração do Ambiente
 
+Projeto hospedado na plataforma do Github(GitPages): https://natyr.github.io/Git-Wars/
+
