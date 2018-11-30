@@ -26,12 +26,12 @@ window.onload = function () {
 
         //Validação de inputs estão vazios
         if (usuarioDesafianteAzul.value === "") {
-            alert("por favor preencha o campo usuário de github")
+            alert("É necessário informar um usuário para o #TeamBlue!");
             return false;
         }
 
         if (usuarioDesafianteVermelho.value === "") {
-            alert("por favor preencha o campo usuário de github");
+            aalert("É necessário informar um usuário para o #TeamRed!");
             return false;
         }
 
