@@ -1,11 +1,19 @@
 # Git-Wars
-Game desenvolvido com o intuito de comparar (disputar) usuários do GitHub e calcular sua pontuação de acordo com critérios pré definidos.
+Game desenvolvido com o intuito de comparar perfis de usuários do GitHub e calcular sua pontuação de acordo com critérios pré definidos.
 
-# Integrantes do Grupo
+## Os critérios de comparação da batalha são: 
+- 1- Repositório Público: + 20 pontos cada;
+- 2- Followers: +10 pontos cada;
+- 3- Seguindo: +5 pontos cada;
+- 4- Mais estrelas no GitHub (soma total de todos os repositórios): +100 pontos cada;
+- 5- Gists: +5 pontos cada;
+- 6- Foto de perfil: +50 pontos.
+
+## Integrantes do Grupo
 Renata Felix da Silva	 |   Gabriela Vieira   |   Eduardo Vinicius   |   Eldrin Cordova   |   Suelen Marques
 
-# Tecnologias Utilizadas
+## Tecnologias Utilizadas
 Front (Bootstrap v4.1.3 ) |  Back (Javascript)
 
-# Instruções de Configuração do Ambiente
+## Instruções de Configuração do Ambiente
 
