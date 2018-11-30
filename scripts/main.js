@@ -58,8 +58,12 @@ window.onload = function () {
 
                         for (var index = 0; index < listaPontosDesafianteAzul.length; index++) {
                             var tagLiCriterio = document.createElement('li');
+                            tagLiCriterio.setAttribute('style', 'text-decoration: line-through blue');
                             var tagLiQuantidade = document.createElement('li');
+                            tagLiQuantidade.setAttribute('style', 'text-decoration: underline overline dotted blue');
                             var tagLiTotal = document.createElement('li');
+                            tagLiTotal.setAttribute('style', 'text-decoration: underline overline dotted blue');
+                            
 
                             tagLiCriterio.innerText = listaPontosDesafianteAzul[index].criterio;
                             tagLiQuantidade.innerText = listaPontosDesafianteAzul[index].qtd;
@@ -81,7 +85,7 @@ window.onload = function () {
                         divDesafianteAzul.setAttribute('style', 'background-image: url(' + listResponses[1].avatar_url + ')');
                         listaPontosDesafianteVermelho = calcPontos(texto);
 
-                        debugger;
+                        
 
 
                         var listaDeCriteriosVermelho = document.getElementById('listaDeCriteriosVermelho');
@@ -91,8 +95,11 @@ window.onload = function () {
 
                         for (var index = 0; index < listaPontosDesafianteVermelho.length; index++) {
                             var tagLiCriterio = document.createElement('li');
+                            tagLiCriterio.setAttribute('style', 'text-decoration: line-through red');
                             var tagLiQuantidade = document.createElement('li');
+                            tagLiQuantidade.setAttribute('style', 'text-decoration: underline overline dotted red');
                             var tagLiTotal = document.createElement('li');
+                            tagLiTotal.setAttribute('style', 'text-decoration: underline overline dotted red');
 
                             tagLiCriterio.innerText = listaPontosDesafianteVermelho[index].criterio;
                             tagLiQuantidade.innerText = listaPontosDesafianteVermelho[index].qtd;
@@ -148,16 +155,18 @@ function calcPontos(perfil) {
             qtd: totalFollowing,
             total: totalFollowing * 5
         },
-        /* {
-             criterio: "Estrela em repositórios",
-             qtd: totalStars,
-             total: totalStars * 10
-         },*/
+        //  {
+        //      criterio: "Estrela em repositórios",
+        //      qtd: totalStars,
+        //      total: totalStars * 10
+        //  },
         {
             criterio: "Gists",
             qtd: totalGists,
             total: totalGists * 5
         }
+
+        
     ];
     return resultado;
 }

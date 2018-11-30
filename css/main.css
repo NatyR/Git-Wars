@@ -65,14 +65,14 @@ body {
   }
 
   .battleCard:first-child {
-      background-color: #e60a12;
+      background-color: #1b2fe6;;
       box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23); 
       transition: all 0.3s; 
       border-radius: 10px;      
   }
 
   .battleCard:last-child {
-      background-color: #1b2fe6;
+      background-color: #e60a12;
       box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23); 
       transition: all 0.3s; 
       border-radius: 10px;
@@ -122,8 +122,8 @@ body {
   }
 
   #btnFight{
-     margin-left: 580px;
-  }
+    margin-left: 450px;
+  } 
 
   .form-control-sm{
     size:19;
@@ -139,3 +139,4 @@ body {
 .resultado{
     display: flex; 
 }
+
