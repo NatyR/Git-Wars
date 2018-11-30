@@ -1,3 +1,11 @@
+@font-face {font-family: "Hitman";
+    src: url("http://db.onlinewebfonts.com/t/3b443b9d9335adaf9fea83fbf8d5d791.eot"); /* IE9*/
+    src: url("http://db.onlinewebfonts.com/t/3b443b9d9335adaf9fea83fbf8d5d791.eot?#iefix") format("embedded-opentype"), /* IE6-IE8 */
+    url("http://db.onlinewebfonts.com/t/3b443b9d9335adaf9fea83fbf8d5d791.woff2") format("woff2"), /* chrome firefox */
+    url("http://db.onlinewebfonts.com/t/3b443b9d9335adaf9fea83fbf8d5d791.woff") format("woff"), /* chrome firefox */
+    url("http://db.onlinewebfonts.com/t/3b443b9d9335adaf9fea83fbf8d5d791.ttf") format("truetype"), /* chrome firefox opera Safari, Android, iOS 4.2+*/
+    url("http://db.onlinewebfonts.com/t/3b443b9d9335adaf9fea83fbf8d5d791.svg#Hitman") format("svg"); /* iOS 4.1- */
+}
 body {
     margin: 0;
     padding: 0;
@@ -14,10 +22,21 @@ body {
       margin: 0 0 10px 0;
       border-bottom: 10px solid #101015;
   }
+
+
   .title {
-    font-size: 70px;
-    color: #101015;
+    font-family:'Hitman';
+    font-size: 90px;
+    color: #000000;
     margin-bottom: 0;
+  }
+
+  .title1 {
+    font-family:'Hitman';
+    font-size: 90px;
+    color: #9e071b;
+    margin-bottom: 0;
+    margin-top: -70px;
   }
   .subtitle {
     margin: 20px 0 20px 0;
@@ -47,6 +66,7 @@ body {
       display: flex;
       justify-content: center;
       align-items: center;
+      
   }
   .battleCard {
       display: flex;
@@ -60,10 +80,16 @@ body {
       padding: 20px;
   }
   .battleCard:first-child {
-      background-color: #ec1d24;
+      background-color: #e60a12;
+      box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23); 
+      transition: all 0.3s; 
+      border-radius: 10px;      
   }
   .battleCard:last-child {
-      background-color: #0c7cec;
+      background-color: #1b2fe6;
+      box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23); 
+      transition: all 0.3s; 
+      border-radius: 10px;
   }
   .battleCard h1 {
       font-size: 100px;
@@ -92,10 +118,27 @@ body {
       border: 5px solid #fff;
       background-color: #101015;
       overflow: hidden;
-      float: left;
+      
   }
   .image1, .image2 {
       width: auto;
       height: 100%;
   }
   
+  .imgTitle{
+      width: 150px;
+      height: 100px;
+      margin-left: 490px;
+      margin-top: -100px;
+      opacity: 0.65;	
+  }
+
+  .interrogacao{
+    opacity:0.50;
+  }
+
+  #btnFight{
+     margin-left: 500px;
+  }
+
+
