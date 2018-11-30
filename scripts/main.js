@@ -182,6 +182,7 @@ function getTotalStars(repos_url) {
             });
             return parseInt(totalStars);
         }
+    
     };
     xhttp.open("GET", repos_url, true);
     xhttp.send();
@@ -189,12 +190,12 @@ function getTotalStars(repos_url) {
 
 function verificaVendedor() {
     if (totalAzul > totalVermelho) {
-        alert("azul ganhou")
+        alert("Parabens! TemRed vendeu :)")
     } else if(totalAzul === totalVermelho){
         alert("empate")
     }
     else  {
-        alert("vermelho ganhou")
+        alert("Parabens! TemBlue vendeu :)")
     }
 }
 
