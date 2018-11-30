@@ -12,30 +12,24 @@
         crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/css?family=Bangers|Oswald" rel="stylesheet">
 </head>
-
-<body id="index" class="home container">
-
     <div id="main" class="container-fluid">
         <header class="header">
             <h1 class="title">GitHub</h1><h1 class="title1">Wars</h1>            
             <img class="imgTitle"src='imagens/vader.gif' alt='GitHub Wars'>            
             
         </header>
-
         <section>
             <h2 class="subtitle"></h2>
 
             <div class="row justify-content-center cards">
-
                 <div id="card1" class="battleCard col-5">
                     <h1 class="interrogacao">?</h1>
                     <div id="card1" class="battleCard">
                         <img src="" />
                     </div>
+
                     <input type="text" name="" id="desafianteAzul" placeholder="Nome Usuário GitHub">
-
                     <div id="totalPontosAzul"></div>
-
                 </div>
 
                 <div class="vs">
@@ -49,16 +43,97 @@
                     </div>
 
                     <input type="text" name="" id="desafianteVermelho" placeholder="Nome Usuário GitHub">
-
                     <div id="totalPontosVermelhos"></div>
-
                 </div>
             </div>
+
             <input type="button" value="FIGHT!" id="btnFight" class="btn btn-dark">
-
         </section>
-
     </div>
+
+    <table id="tab-jogador-1">
+    <h1>Player 1</h1>
+    <tr>
+        <th>CRITÉRIO</th>
+        <th>QUANTIDADE</th>
+        <th>TOTAL</th>
+    </tr>
+    <tr>
+        <td>Repositories</td>
+        <td>0</td>
+        <td>00</td>
+    </tr>
+    <tr>
+        <td>Followers</td>
+        <td>0</td>
+        <td>00</td>
+    </tr>
+    <tr>
+        <td>Following</td>
+        <td>0</td>
+        <td>00</td>
+    </tr>
+
+    <tr>
+        <td>STARS</td>
+        <td>0</td>
+        <td>0</td>
+    </tr>
+
+    <tr>
+        <td>GISTS</td>
+        <td>0</td>
+        <td>00</td>
+    </tr>
+
+    <tr>
+        <td>Profile picture</td>
+        <td>0</td>
+        <td>00</td>
+    </tr>
+</table>
+
+<table id="tab-jogador-2">
+    <h1>Player 2</h1>
+    <tr>
+        <th>CRITÉRIO</th>
+        <th>QUANTIDADE</th>
+        <th>TOTAL</th>
+    </tr>
+    <tr>
+        <td>Repositories</td>
+        <td>0</td>
+        <td>00</td>
+    </tr>
+    <tr>
+        <td>Followers</td>
+        <td>0</td>
+        <td>00</td>
+    </tr>
+    <tr>
+        <td>Following</td>
+        <td>0</td>
+        <td>00</td>
+    </tr>
+
+    <tr>
+        <td>STARS</td>
+        <td>0</td>
+        <td>0</td>
+    </tr>
+
+    <tr>
+        <td>GISTS</td>
+        <td>0</td>
+        <td>00</td>
+    </tr>
+
+    <tr>
+        <td>Profile picture</td>
+        <td>0</td>
+        <td>00</td>
+    </tr>
+
 
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
         crossorigin="anonymous"></script>
@@ -102,6 +177,7 @@
 
         return resultado;
     }
+
     function getTotalStars(repos_url) {
         const xhttp = new XMLHttpRequest();         
         xhttp.onreadystatechange = async function() {

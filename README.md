@@ -12,6 +12,13 @@ Game desenvolvido com o intuito de comparar perfis de usuários do GitHub e calc
 ## Integrantes do Grupo
 Renata Felix da Silva	 |   Gabriela Vieira   |   Eduardo Vinicius   |   Eldrin Cordova   |   Suelen Marques
 
+## Divisão de tarefas do grupo: 
+- Eldrin Cordova - HTML / CSS
+- Eduardo Vinicius - JS/ Requisição
+- Gabriela Vieira - JS/ Requisição
+- Renata Felix da Silva - Gerenciamento do Projeto e pitch
+- Suelen Marques - HTML / CSS
+
 ## Tecnologias Utilizadas
 Front (Bootstrap v4.1.3 ) |  Back (Javascript)
 
