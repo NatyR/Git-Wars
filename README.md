@@ -1,9 +1,6 @@
 # Git-Wars
 Game desenvolvido com o intuito de comparar perfis de usuários do GitHub e calcular sua pontuação de acordo com critérios pré definidos.
 
-# Git-Wars
-Game desenvolvido com o intuito de comparar perfis de usuários do GitHub e calcular sua pontuação de acordo com critérios pré definidos.
-
 ## Os critérios de comparação da batalha são: 
 - 1- Repositório Público: + 20 pontos cada;
 - 2- Followers: +10 pontos cada;
