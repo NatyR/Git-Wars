@@ -9,7 +9,7 @@ Game desenvolvido com o objetivo de comparar perfis de usuários do GitHub e cal
 - 5- Gists: +5 pontos cada;
 - 6- Foto de perfil: +50 pontos.
 
-## Sobre o desenvolvimento
+## 👩‍💻 Sobre o desenvolvimento
 Este projeto foi criado com fins educacionais e para prática de:
 
 - Consumo de APIs REST
@@ -17,13 +17,13 @@ Este projeto foi criado com fins educacionais e para prática de:
 - Lógica de pontuação
 - Design de interfaces interativas
 
-## Tecnologias Utilizadas
+## 🛠️ Tecnologias Utilizadas
 - HTML5
 - CSS3
 - JavaScript (ES6+)
 - API GitHub
 
-## Instruções de Configuração do Ambiente
+## 🚀Deploy
 
 O projeto está hospedado no GitHub Pages e pode ser acessado através do link:
 
