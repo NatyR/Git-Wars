@@ -1,109 +1,67 @@
 <!DOCTYPE html>
-<html>
-
+<html lang="pt-BR">
 <head>
-    <meta charset="utf-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">    
-    
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>GitHub Wars</title>
 
-    <title>GitHub Wars</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" type="text/css" media="screen" href="css/main.css" />
-    <script src="scripts/main.js"></script>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
-        crossorigin="anonymous">
-    <link href="https://fonts.googleapis.com/css?family=Bangers|Oswald" rel="stylesheet">
+  <link rel="stylesheet" href="css/main.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;600&family=Bangers&display=swap" rel="stylesheet">
 </head>
 
+<body>
+  <main class="app">
 
-<body id="index" class="home container">
-    <div id="main" class="container-fluid">
-        <header class="header">
-            <h1 class="title">GitHub</h1><h1 class="title1">Wars</h1>            
-            <img class="imgTitle"src='imagens/vader.gif' alt='GitHub Wars'>                      
-        </header>
+    <header class="header">
+      <h1 class="logo">
+        <span>GitHub</span>
+        <strong>Wars</strong>
+      </h1>
+    </header>
 
-        <section>
-            <h2 class="subtitle"></h2>
+    <section class="battle">
 
-            <div class="row justify-content-center cards">
+      <article class="player player--blue">
+        <h2>#TeamBlue</h2>
 
-                <div id="card1" class="battleCard col-5">
-                    <h1 class="interrogacao">?</h1>
-                    <div id="card1" class="battleCard">
-                        <img src="" />
-                    </div>
-                    <!-- Button trigger modal -->
-                    <input type="text" class="form-control-sm" name="" id="desafianteAzul" placeholder="Nome Usuário GitHub">
+        <input 
+          type="text" 
+          id="desafianteAzul" 
+          placeholder="Usuário GitHub"
+        />
 
-                    <div id="divListagemPontosAzul" class="col-md-10">
-                        <div class="row">
-                            <div class="col-md-4" id="criterioAzul">Critério
-                                <ul id="listaDeCriteriosAzul">                                  
-                                </ul>
-                            </div>
-                            <div class="col-md-4" id="quantidadeAzul">Quantidade
-                                <ul id="listaQuantidadeAzul">
-                                </ul>
-                            </div>
-                            <div class="col-md-4" id="totalPontosCriterioAzul">Total
-                                <ul id="listaPontodTotaisAzul">
-                                </ul>
-                            </div>
-                            <div id="totalPontosAzul"></div>
-                        </div>
-                    </div>
+        <div class="avatar" id="avatarBlue">?</div>
 
-                </div>
+        <ul class="stats" id="statsBlue"></ul>
 
-                <div class="vs">
-                    <h1 class="title">VS</h1>
-                </div>
+        <div class="total" id="totalPontosAzul">Total: 0</div>
+      </article>
 
-                <div id="card2" class="battleCard col-5">
-                    <h1 class="interrogacao">?</h1>
-                    <div id="card2" class="battleCard">
-                        <img src="" />
-                    </div>
+      <div class="vs">VS</div>
 
-                    <input type="text" class="form-control-sm" name="" id="desafianteVermelho" placeholder="Nome Usuário GitHub">
+      <article class="player player--red">
+        <h2>#TeamRed</h2>
 
-                    <div id="divListagemPontosVermelho" class="col-md-10">
-                        <div class="row">
-                            <div class="col-md-4" id="criterioVermelho">Critério
-                                <ul id="listaDeCriteriosVermelho">                                  
-                                </ul>
-                            </div>
-                            <div class="col-md-4" id="quantidadeVermelho">Quantidade
-                                <ul id="listaQuantidadeVermelho">
-                                </ul>
-                            </div>
-                            <div class="col-md-4" id="totalPontosCriterioVermelho">Total
-                                <ul id="listaPontodTotaisVermelho">
-                                </ul>
-                            </div>
-                            <div id="totalPontosVermelhos"></div>
-                        </div>
-                    </div>
-                </div>
-            </div></br>
-            <input type="button" value="Fight!!" id="btnFight" class="btn btn-dark">
-            <input type="button" value="Refresh" id="btnRefresh" class="btn btn-dark" onClick='parent.location="javascript:location.reload()"'>
+        <input 
+          type="text" 
+          id="desafianteVermelho" 
+          placeholder="Usuário GitHub"
+        />
 
-        </section>
+        <div class="avatar" id="avatarRed">?</div>
 
-    </div>
+        <ul class="stats" id="statsRed"></ul>
 
-  
+        <div class="total" id="totalPontosVermelho">Total: 0</div>
+      </article>
 
+    </section>
 
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
-        crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
-        crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
-        crossorigin="anonymous"></script>
-
+    <footer class="actions">
+      <button id="btnFight">Fight</button>
+      <button onclick="location.reload()">Reset</button>
+    </footer>
+  </main>
+  <script src="scripts/main.js"></script>
 </body>
-
 </html>

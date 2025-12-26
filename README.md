@@ -1,7 +1,7 @@
-# Git-Wars
-Game desenvolvido com o intuito de comparar perfis de usuários do GitHub e calcular sua pontuação de acordo com critérios pré definidos.
+# ⚔️ Git-Wars
+Game desenvolvido com o objetivo de comparar perfis de usuários do GitHub e calcular sua pontuação de acordo com critérios pré definidos.
 
-## Os critérios de comparação da batalha são: 
+## 🧮 Critérios de Pontuação
 - 1- Repositório Público: + 20 pontos cada;
 - 2- Followers: +10 pontos cada;
 - 3- Seguindo: +5 pontos cada;
@@ -9,20 +9,23 @@ Game desenvolvido com o intuito de comparar perfis de usuários do GitHub e calc
 - 5- Gists: +5 pontos cada;
 - 6- Foto de perfil: +50 pontos.
 
-## Integrantes do Grupo
-Renata Felix da Silva	 |   Gabriela Vieira   |   Eduardo Vinicius   |   Eldrin Cordova   |   Suelen Marques
+## Sobre o desenvolvimento
+Este projeto foi criado com fins educacionais e para prática de:
 
-## Divisão de tarefas do grupo: 
-- Eldrin Cordova - HTML / CSS
-- Eduardo Vinicius - JS/ Requisição
-- Gabriela Vieira - JS/ Requisição
-- Renata Felix da Silva - HTML / CSS | JS/Requisição | Gerenciamento do Projeto
-- Suelen Marques - HTML / CSS
+- Consumo de APIs REST
+- Manipulação do DOM
+- Lógica de pontuação
+- Design de interfaces interativas
 
 ## Tecnologias Utilizadas
-Front (Bootstrap v4.1.3 ) |  Back (Javascript)
+- HTML5
+- CSS3
+- JavaScript (ES6+)
+- API GitHub
 
 ## Instruções de Configuração do Ambiente
 
-Projeto hospedado na plataforma do Github(GitPages): https://natyr.github.io/Git-Wars/
+O projeto está hospedado no GitHub Pages e pode ser acessado através do link:
+
+🔗 https://natyr.github.io/Git-Wars/
 

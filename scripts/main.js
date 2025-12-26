@@ -1,206 +1,144 @@
-var desafiantes;
-var listResponses = [];
+// ===============================
+// ELEMENTOS DO DOM
+// ===============================
+console.log('JS carregado com sucesso');
 
-var listaPontosDesafianteVermelho;
-var listaPontosDesafianteAzul;
+document.addEventListener('DOMContentLoaded', () => {
 
-var totalVermelho = 0;
-var totalAzul = 0;
+  const btnFight = document.getElementById('btnFight');
 
-var processouAzul = false;
-var processouVermelho = false;
+  const inputBlue = document.getElementById('desafianteAzul');
+  const inputRed = document.getElementById('desafianteVermelho');
 
+  const statsBlue = document.getElementById('statsBlue');
+  const statsRed = document.getElementById('statsRed');
 
+  const totalBlue = document.getElementById('totalPontosAzul');
+  const totalRed = document.getElementById('totalPontosVermelho');
 
-window.onload = function () {
-    var btnFight = document.getElementById('btnFight');
+  const avatarBlue = document.getElementById('avatarBlue');
+  const avatarRed = document.getElementById('avatarRed');
 
-    var usuarioDesafianteAzul = document.getElementById('desafianteAzul');
-    var usuarioDesafianteVermelho = document.getElementById('desafianteVermelho');
+  // ===============================
+  // EVENTO PRINCIPAL
+  // ===============================
+  btnFight.addEventListener('click', fight);
 
-    var totalPontosAzul = document.getElementById('totalPontosAzul');
-    var totalPontosVermelho = document.getElementById('totalPontosVermelhos');
+  // ===============================
+  // FUNÇÃO PRINCIPAL
+  // ===============================
+  async function fight() {
+    const blueUser = inputBlue.value.trim();
+    const redUser = inputRed.value.trim();
 
+    if (!blueUser || !redUser) {
+      alert('Informe os dois usuários do GitHub!');
+      return;
+    }
 
-    btnFight.addEventListener("click", function () {
+    resetUI();
+    setLoading(true);
 
-        //Validação de inputs estão vazios
-        if (usuarioDesafianteAzul.value === "") {
-            alert("É necessário informar um usuário para o #TeamBlue!");
-            return false;
-        }
+    try {
+      const [blueData, redData] = await Promise.all([
+        getGitHubUser(blueUser),
+        getGitHubUser(redUser)
+      ]);
 
-        if (usuarioDesafianteVermelho.value === "") {
-            aalert("É necessário informar um usuário para o #TeamRed!");
-            return false;
-        }
+      const blueScore = renderPlayer(blueData, statsBlue, avatarBlue, totalBlue);
+      const redScore = renderPlayer(redData, statsRed, avatarRed, totalRed);
 
-        listResponses = [];
-        desafiantes = [usuarioDesafianteAzul.value, usuarioDesafianteVermelho.value];
+      showWinner(blueScore, redScore);
 
-        desafiantes.forEach((nome) => {
-            const xhttp = new XMLHttpRequest();
-            xhttp.onreadystatechange = async function () {
-                if (this.readyState == 4 && this.status == 200) {
-                    console.log(xhttp.responseText);
-                    var texto = (JSON.parse(xhttp.responseText));
-                    listResponses.push(texto);
+    } catch (error) {
+      alert(error.message);
+    } finally {
+      setLoading(false);
+    }
+  }
 
-                    if (texto.login.toLowerCase() == desafiantes[0]) {
-                        var divDesafianteAzul = document.getElementById('card1');
-                        divDesafianteAzul.setAttribute('style', 'background-image: url(' + listResponses[0].avatar_url + ')');
-                        listaPontosDesafianteAzul = calcPontos(texto);
+  // ===============================
+  // API GITHUB
+  // ===============================
+  async function getGitHubUser(username) {
+    const response = await fetch(`https://api.github.com/users/${username}`);
 
-                        var listaDeCriteriosAzul = document.getElementById('listaDeCriteriosAzul');
-                        var listaQuantidadeAzul = document.getElementById('listaQuantidadeAzul');
-                        var listaPontodTotaisAzul = document.getElementById('listaPontodTotaisAzul');
+    if (!response.ok) {
+      throw new Error(`Usuário "${username}" não encontrado`);
+    }
 
+    return response.json();
+  }
 
-                        for (var index = 0; index < listaPontosDesafianteAzul.length; index++) {
-                            var tagLiCriterio = document.createElement('li');
-                            tagLiCriterio.setAttribute('style', 'text-decoration: line-through blue');
-                            var tagLiQuantidade = document.createElement('li');
-                            tagLiQuantidade.setAttribute('style', 'text-decoration: underline overline dotted blue');
-                            var tagLiTotal = document.createElement('li');
-                            tagLiTotal.setAttribute('style', 'text-decoration: underline overline dotted blue');
-                            
-
-                            tagLiCriterio.innerText = listaPontosDesafianteAzul[index].criterio;
-                            tagLiQuantidade.innerText = listaPontosDesafianteAzul[index].qtd;
-                            tagLiTotal.innerText = listaPontosDesafianteAzul[index].total;
-
-                            listaDeCriteriosAzul.append(tagLiCriterio);
-                            listaQuantidadeAzul.append(tagLiQuantidade);
-                            listaPontodTotaisAzul.append(tagLiTotal);
-
-
-                            totalAzul = totalAzul + parseInt(listaPontosDesafianteAzul[index].total);
-                        }
-                        totalPontosAzul.innerHTML = "Total: " + totalAzul;
-                        processouAzul = true
-                    }
-
-                    if (texto.login.toLowerCase() == desafiantes[1]) {
-                        var divDesafianteAzul = document.getElementById('card2');
-                        divDesafianteAzul.setAttribute('style', 'background-image: url(' + listResponses[1].avatar_url + ')');
-                        listaPontosDesafianteVermelho = calcPontos(texto);
-
-                        
-
-
-                        var listaDeCriteriosVermelho = document.getElementById('listaDeCriteriosVermelho');
-                        var listaQuantidadeVermelho = document.getElementById('listaQuantidadeVermelho');
-                        var listaPontodTotaisVermelho = document.getElementById('listaPontodTotaisVermelho');
-
-
-                        for (var index = 0; index < listaPontosDesafianteVermelho.length; index++) {
-                            var tagLiCriterio = document.createElement('li');
-                            tagLiCriterio.setAttribute('style', 'text-decoration: line-through red');
-                            var tagLiQuantidade = document.createElement('li');
-                            tagLiQuantidade.setAttribute('style', 'text-decoration: underline overline dotted red');
-                            var tagLiTotal = document.createElement('li');
-                            tagLiTotal.setAttribute('style', 'text-decoration: underline overline dotted red');
-
-                            tagLiCriterio.innerText = listaPontosDesafianteVermelho[index].criterio;
-                            tagLiQuantidade.innerText = listaPontosDesafianteVermelho[index].qtd;
-                            tagLiTotal.innerText = listaPontosDesafianteVermelho[index].total;
-
-                            listaDeCriteriosVermelho.append(tagLiCriterio);
-                            listaQuantidadeVermelho.append(tagLiQuantidade);
-                            listaPontodTotaisVermelho.append(tagLiTotal);
-
-                            totalVermelho = totalVermelho + parseInt(listaPontosDesafianteVermelho[index].total);
-
-                        }
-
-                        totalPontosVermelho.innerHTML = "Total: " + totalVermelho;
-                        processouVermelho = true;
-                    }
-
-                    if (processouAzul && processouVermelho) {
-                        //chama função que verifica quem ganhou
-                        verificaVendedor();
-                    }
-
-                }
-            };
-            xhttp.open("GET", "https://api.github.com/users/" + nome, true);
-            xhttp.send();
-        });
-
-
-    });
-};
-
-function calcPontos(perfil) {
-    var totalRepos = parseInt(perfil.public_repos);
-    var totalFollowers = parseInt(perfil.followers);
-    var totalFollowing = parseInt(perfil.following);
-    //var totalStars = (perfil.repos_url.length) ? getTotalStars(perfil.repos_url) : 0;
-    var totalGists = parseInt(perfil.public_gists);
-
-    var resultado = [
-        {
-            criterio: "Repositório",
-            qtd: totalRepos,
-            total: totalRepos * 20
-        },
-        {
-            criterio: "Followers",
-            qtd: totalFollowers,
-            total: totalFollowers * 10
-        },
-        {
-            criterio: "Following",
-            qtd: totalFollowing,
-            total: totalFollowing * 5
-        },
-        //  {
-        //      criterio: "Estrela em repositórios",
-        //      qtd: totalStars,
-        //      total: totalStars * 10
-        //  },
-        {
-            criterio: "Gists",
-            qtd: totalGists,
-            total: totalGists * 5
-        }
-
-        
+  // ===============================
+  // CÁLCULO DE PONTOS
+  // ===============================
+  function calculateStats(user) {
+    return [
+      { label: 'Repositórios', value: user.public_repos, score: user.public_repos * 20 },
+      { label: 'Followers', value: user.followers, score: user.followers * 10 },
+      { label: 'Following', value: user.following, score: user.following * 5 },
+      { label: 'Gists', value: user.public_gists, score: user.public_gists * 5 }
     ];
-    return resultado;
-}
+  }
 
-function getTotalStars(repos_url) {
-    const xhttp = new XMLHttpRequest();
-    xhttp.onreadystatechange = async function () {
-        if (this.readyState == 4 && this.status == 200) {
-            var totalStars = 0;
-            var repos = (JSON.parse(xhttp.responseText));
-            repos.forEach((repo) => {
-                totalStars += repo.stargazers_count;
-            });
-            return parseInt(totalStars);
-        }
-    
-    };
-    xhttp.open("GET", repos_url, true);
-    xhttp.send();
-}
+  // ===============================
+  // RENDERIZAÇÃO DO JOGADOR
+  // ===============================
+  function renderPlayer(user, statsContainer, avatar, totalElement) {
+    const stats = calculateStats(user);
+    let total = 0;
 
-function verificaVendedor() {
-    if (totalAzul > totalVermelho) {
-        alert("Parabens! TemRed vendeu :)")
-    } else if(totalAzul === totalVermelho){
-        alert("empate")
+    avatar.innerHTML = `<img src="${user.avatar_url}" alt="${user.login}" />`;
+
+    stats.forEach(stat => {
+      total += stat.score;
+
+      const li = document.createElement('li');
+      li.innerHTML = `
+        <span>${stat.label} (${stat.value})</span>
+        <strong>${stat.score}</strong>
+      `;
+      statsContainer.appendChild(li);
+    });
+
+    totalElement.textContent = `Total: ${total}`;
+    return total;
+  }
+
+  // ===============================
+  // RESULTADO FINAL
+  // ===============================
+  function showWinner(blue, red) {
+    if (blue > red) {
+      alert('🏆 Team Blue venceu!');
+    } else if (red > blue) {
+      alert('🏆 Team Red venceu!');
+    } else {
+      alert('⚔️ Empate!');
     }
-    else  {
-        alert("Parabens! TemBlue vendeu :)")
-    }
-}
+  }
 
+  // ===============================
+  // RESET DA INTERFACE
+  // ===============================
+  function resetUI() {
+    statsBlue.innerHTML = '';
+    statsRed.innerHTML = '';
 
+    avatarBlue.textContent = '?';
+    avatarRed.textContent = '?';
 
+    totalBlue.textContent = 'Total: 0';
+    totalRed.textContent = 'Total: 0';
+  }
 
+  // ===============================
+  // LOADING VISUAL
+  // ===============================
+  function setLoading(isLoading) {
+    btnFight.disabled = isLoading;
+    btnFight.textContent = isLoading ? 'Fighting...' : 'Fight';
+  }
 
-
+});
